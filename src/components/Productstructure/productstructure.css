@@ -1,0 +1,39 @@
+
+/* box style */
+
+.bestmobilebox{
+    /* border:1px solid blue; */
+    padding:2%;
+    line-height:98%;
+}
+.bestmobile{
+    display: flex;
+}
+.bestmobileimg{
+    width:70%;
+    height:50%;
+    margin-left:9% ;
+}
+.bestphonedis{
+    /* border:1px solid blue; */
+    margin: 0%;
+}
+.bestphonediscount{
+   text-decoration: line-through;
+   color: red;
+}
+.onhovertitle{
+    color: rgb(83, 83, 214);
+}
+.onhovertitle:hover{
+    color: red;
+}
+.bestphonebutton{
+    background-color: red;
+    color: white;
+    font-size: large;
+}
+.bestphonebutton:hover{
+    
+    background-color: rgb(84, 84, 231);
+}

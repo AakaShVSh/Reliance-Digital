@@ -1,0 +1,47 @@
+.bannerhome{
+    width:100%
+}
+.offerhome{
+    /* border:1px solid red; */
+    text-align: left;
+    width:100%;
+}
+.offerpro{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:2%;
+    row-gap: 8%;
+    width:90%;
+    padding: 2%;
+    margin: auto;
+    /* border:1px solid green; */
+}
+.offerimg{
+    width:90%
+}
+.explorepro{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.explorebtn{
+    font-size: x-large;
+    border-radius: 38%;
+    border-color: blue;
+    background-color: rgb(42, 42, 252);
+    color: white;
+    margin:2%
+}
+.explorebtn:hover{
+    background-color: white;
+    color: black;
+}
+.boximg{
+    width:25%;
+    height:20%
+}
+
+
+.bestmobile-main{
+    text-align: left;
+    padding: 2%;
+}
