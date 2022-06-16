@@ -1,0 +1,58 @@
+.motomain{
+    /* border:1px solid red; */
+    width:97%;
+    margin:auto;
+    display: flex;
+    /* grid-template-columns: repeat(2,1fr); */
+    gap:2%;
+    margin-top:2%;
+}
+.motofilter{
+    /* border:1px solid gray; */
+    padding: 1%;
+    width:30%;
+    text-align: left;
+    margin-top: -2.4%;
+    height: fit-content;
+}
+.motoproduct{
+    /* border:1px solid blue; */
+    width:100%
+}
+.filter{
+    text-align: right;
+}
+#select{
+    font-size: large;
+}
+.hr{
+    /* border:1px solid blue; */
+    margin-top: -3%;
+}
+.price{
+    /* border:1px solid red; */
+    margin-top: -3%;
+}
+.rangenumber{
+    width:30%;
+    border-color: #5587ce;
+    font-size: large;
+
+}
+.button{
+    font-size: large;
+    background-color: #1f4985;
+    color: white;
+    margin-left: 6%;
+}
+.product{
+    /* border:1px solid red; */
+    text-align: left;
+    
+}
+.searchinput{
+    width:70%;
+    border-color: #5587ce;
+    font-size: large;
+    margin-top: -1px;
+}

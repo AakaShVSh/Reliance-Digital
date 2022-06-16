@@ -1,39 +1,47 @@
 
 /* box style */
 
-.bestmobilebox{
+.mobilebox{
     /* border:1px solid blue; */
     padding:2%;
     line-height:98%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
-.bestmobile{
-    display: flex;
+.mobile{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:2%
 }
-.bestmobileimg{
+.mobileimg{
     width:70%;
     height:50%;
     margin-left:9% ;
 }
-.bestphonedis{
+.phonedis{
     /* border:1px solid blue; */
-    margin: 0%;
+    margin: -2%;
 }
-.bestphonediscount{
+.phonediscount{
    text-decoration: line-through;
    color: red;
 }
-.onhovertitle{
+.hovertitle{
     color: rgb(83, 83, 214);
 }
-.onhovertitle:hover{
+.hovertitle:hover{
     color: red;
 }
-.bestphonebutton{
-    background-color: red;
+.phonebutton{
+    background-color: rgb(36, 116, 26);
     color: white;
     font-size: large;
 }
-.bestphonebutton:hover{
+.phonebutton:hover{
     
     background-color: rgb(84, 84, 231);
+}
+.btn1{
+    margin-right: 27%;
+    margin-bottom:48%;
 }

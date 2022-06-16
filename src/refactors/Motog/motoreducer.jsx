@@ -1,5 +1,5 @@
 import { moto } from "../../data/data"
-console.log(moto)
+
 const initstate = {
     loading:false,
     data:moto,

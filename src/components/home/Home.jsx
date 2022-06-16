@@ -1,6 +1,5 @@
 import React from "react";
 import { homedata } from "../../data/data";
-import Productstructure from "../Productstructure/Productstructure";
 import "./Home.css";
 const Home = () => {
   const { Offer, explore, product } = homedata;
@@ -46,14 +45,30 @@ const Home = () => {
         <h2>BEST SELLING MOBILES</h2>
       <div className="bestmobile">
         <img className="boximg" src="https://www.reliancedigital.in/medias/Best-Selling-Mobiles.jpg?context=bWFzdGVyfGltYWdlc3wxMDMyODF8aW1hZ2UvanBlZ3xpbWFnZXMvaDRmL2hhMS85ODQyMjU1MTY3NTE4LmpwZ3w1YzI5NmI5ZDkzYTI0NTBlZDA5YzExZmMyNWIwYjExMzQ5YmY2Y2RhMDE0YjVlNDkzMjhjYjBmOWYzNGM0MjVm" alt="img" />
-        <Productstructure product={product.bestphone}/>
+       
+        {product.bestphone.map((e) => <div key={e.id} className="bestmobilebox">
+          <img id="struc" className="bestmobileimg" src={e.img} alt="" />
+          <p className="onhovertitle">{e.title}</p>
+          <h5 className="bestphonedis">Offer Price:<>₹{e.price}.00</></h5>
+          <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
+         <div className='btn'> <button className="bestphonebutton">Buy Now</button>
+           <button className="bestphonebutton">Add to Cart</button> 
+      </div>  </div>)}
+      
       </div>
       </div>
       <hr />
       <div className="bestmobile-main">
         <h2>LAPTOPS WITH SSD</h2>
       <div className="bestmobile">
-      <Productstructure product={product.bestlaptop}/>  
+      {product.bestlaptop.map((e) => <div key={e.id} className="bestmobilebox">
+          <img id="struc" className="bestmobileimg" src={e.img} alt="" />
+          <p className="onhovertitle">{e.title}</p>
+          <h5 className="bestphonedis">Offer Price:<>₹{e.price}.00</></h5>
+          <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
+         <div className='btn'> <button className="bestphonebutton">Buy Now</button>
+           <button className="bestphonebutton">Add to Cart</button> 
+      </div>  </div>)}
         <img className="boximg" src="https://www.reliancedigital.in/medias/Laptops-with-SSD.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ5ODN8aW1hZ2UvanBlZ3xpbWFnZXMvaDVjL2hhZS85ODM3MjgzMTgwNTc0LmpwZ3w1NzM1ZmZiZmU4OTlmZTE3MjVmYjdkNTY3NDhmNzI5MDA5Yzk5YjQzOWQwODdlYjJjNTRiYzAxNTJkYTFhNzE0" alt="img" />
       </div>
       </div>
@@ -62,14 +77,28 @@ const Home = () => {
         <h2>TOP DEALS IN WASHING MACHINE</h2>
       <div className="bestmobile">
         <img className="boximg" src="https://www.reliancedigital.in/medias/Top-Deals-In-Washing-Machine.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ0MTN8aW1hZ2UvanBlZ3xpbWFnZXMvaDdiL2g0NS85ODM3MjgzMjQ2MTEwLmpwZ3xiYWYzNTI4ZDRkYTZlNmUzMDhjYzA0OTQ3MmYyNWM2MWEzNGMzNGZkM2E2NDk2MTI3MjAyOTkwYjVjZTZlYzcz" alt="img" />
-        <Productstructure product={product.bestwashing}/>
+        {product.bestwashing.map((e) => <div key={e.id} className="bestmobilebox">
+          <img id="struc" className="bestmobileimg" src={e.img} alt="" />
+          <p className="onhovertitle">{e.title}</p>
+          <h5 className="bestphonedis">Offer Price:<>₹{e.price}.00</></h5>
+          <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
+         <div className='btn'> <button className="bestphonebutton">Buy Now</button>
+           <button className="bestphonebutton">Add to Cart</button> 
+      </div>  </div>)}
       </div>
       </div>
       <hr />
       <div className="bestmobile-main">
         <h2>XIAOMI HD SMART LED TV</h2>
       <div className="bestmobile">
-        <Productstructure product={product.besttv}/>
+      {product.besttv.map((e) => <div key={e.id} className="bestmobilebox">
+          <img id="struc" className="bestmobileimg" src={e.img} alt="" />
+          <p className="onhovertitle">{e.title}</p>
+          <h5 className="bestphonedis">Offer Price:<>₹{e.price}.00</></h5>
+          <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
+         <div className='btn'> <button className="bestphonebutton">Buy Now</button>
+           <button className="bestphonebutton">Add to Cart</button> 
+      </div>  </div>)}
         <img className="boximg" src="https://www.reliancedigital.in/medias/Xiaomi-HD-Smart-LED-TV-Products-Carousel.jpg?context=bWFzdGVyfGltYWdlc3wxMjU2ODV8aW1hZ2UvanBlZ3xpbWFnZXMvaGQxL2g0Ny85ODM5ODA1MzMzNTM0LmpwZ3w4NTAxN2Q3ZDNlMTZiMGYwMTZlMjg5YWIwMmQxODkwMzkzMDE4OTIzOTFlYTA2NmZjZTQ4NGMxNWUzNTU0ZGM3" alt="img" />
       </div>
       </div>

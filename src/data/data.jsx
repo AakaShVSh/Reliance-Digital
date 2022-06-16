@@ -432,13 +432,6 @@ export const roboticvacuum = [
     id:12
   },
   {
-    img:"iRobot Roomba i3 Robotic Vacuum Cleaner with Wi-Fi Connectivity, Patented Dirt Detect Technology, Ideal For Homes With Pets, Grey",
-    title:"iRobot i Series Roomba i3152 Robotic Vacuum Cleaner with Smart Assistance, Pet Friendly, Cool Grey",
-    price:48999,
-    Dprice:52000,
-    id:13
-  },
-  {
     img:"https://www.reliancedigital.in/medias/Irobot-Roomba-976-Vacuum-Cleaners-491891622-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1OTA1MXxpbWFnZS9qcGVnfGltYWdlcy9oNTgvaGI2LzkzMTU2NDk3MTYyNTQuanBnfGVlNTMxMjMzMmI0MjRjYmQxZDA5YmNiNDE3MjUzZWVlZWI0NTA5ODIwMmJjZDhlN2RiOWJiNWY5MGYzNjMyZjQ",
     title:"iRobot Roomba 900 Series 976 Robotic Vacuum Cleaner",
     price:34900,
