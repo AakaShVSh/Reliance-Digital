@@ -1,7 +1,11 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import isAuthAction from "../../refactors/isAuth/isAuthAction";
 const Navbar = () => {
+  const {isauth} = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
   return (
     <div>
       <div className="navbar">
@@ -23,10 +27,14 @@ const Navbar = () => {
         </div>
         <div className="quries">
           <div className="contact">
-            <h5>Find a store | Buying guides | <Link to='/contact'>Contact us</Link></h5>
+            <h5><i class="fa-solid fa-location-dot"></i> Find a store | Buying guides | <Link className="linknavbar" to='/contact'>Contact us</Link></h5>
           </div>
           <div className="location">
-            <h5>Select your location | <Link to='/cart'>Cart</Link> | <Link to='/login'>Login</Link></h5>
+            <h5><i class="fa-solid fa-location-dot"></i> Deliver to Mumbai 000000 | <Link className="linknavbar" to='/cart'><i class="fa-solid fa-cart-shopping"></i> Cart</Link> | <Link className="linknavbar" onClick={(e) => {
+              if(e.target.innerHTML == "Logout"){
+                dispatch(isAuthAction(!isauth))
+              }
+            }} to={isauth === true ? "/" : "/login"}><i class="fa-solid fa-user"></i> {isauth ===false ? "Login" : "Logout"}</Link></h5>
           </div>
         </div>
       </div>
@@ -39,7 +47,7 @@ const Navbar = () => {
                 <div className="inner-mega-menu">
                   <div className="left-mega-position">
                     <h3>Smartphones</h3>
-                    <p><Link to='/moto'>Moto E32s</Link></p>
+                    <p><Link className="linknavbar" to='/moto'>Moto E32s</Link></p>
                   </div>
                   <div className="left-mega-position">
                     <h3>Smart Wearables</h3>
@@ -85,7 +93,7 @@ const Navbar = () => {
                   <div className="left-mega-position">
                     <h3>Televisions</h3>
                     <p>Smart TVs</p>
-                    <p><Link to='inchtv'>32 Inch TVs</Link></p>
+                    <p><Link className="linknavbar" to='inchtv'>32 Inch TVs</Link></p>
                     <p>43 Inch TVs</p>
                     <p>55 Inch TVs</p>
                     <p>Andriod TVs</p>
@@ -158,7 +166,7 @@ const Navbar = () => {
                 <div className="inner-mega-menu">
                   <div className="left-mega-position">
                     <h3>Vacuum Cleaners</h3>
-                    <p><Link to='/robotic'>Robotic Vacuum Cleaners</Link></p>
+                    <p><Link className="linknavbar" to='/robotic'>Robotic Vacuum Cleaners</Link></p>
                     <h3>Diswashers</h3>
                     <h3>Fans</h3>
                     <h3>Cloth Dryers</h3>

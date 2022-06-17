@@ -1,16 +1,19 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./cart.css";
 import { Link } from "react-router-dom";
+import { addprice, discount, removefromcart } from "../../refactors/cart/cartAction";
+import {Counter} from "../counter/counter";
 const Cart = () => {
-  const { cartdata } = useSelector((state) => state.cart);
-  
+  const { cartdata ,totalprice} = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const [aplicable,setaplicable] = useState("")
   console.log(cartdata);
   return (
     <div className="cartdiv">
       <div className="item">
         <div className="itemcount">
-          <h3>My Cart(1 items)</h3>
+          <h3>My Cart({cartdata.length} items)</h3>
           <h6>shiping to: 400103</h6>
         </div>
         <hr />
@@ -20,9 +23,7 @@ const Cart = () => {
               <div className="imgitem">
                 <img className="itemimg" src={e.img} alt="" />
                 <br />
-                <button>+</button>
-                {e.count}
-                <button>-</button>
+                <Counter price={e.price}/>
               </div>
               <div className="itemtitle">
                 <h3 className="top">{e.title}</h3>
@@ -47,7 +48,7 @@ const Cart = () => {
               </div>
             </div>
             <div className="removeitem">
-              <button className="btn1r">Remove</button>
+              <button onClick={() => {dispatch(addprice(-e.price));dispatch(removefromcart(e.title))}} className="btn1r">Remove</button>
               <button className="btn1r">Move to wishlist</button>
             </div>
           </div>
@@ -58,17 +59,26 @@ const Cart = () => {
         <div className="cartcheck">
           <div className="cartcheckcoupon">
             <input
+               onChange={(e) => setaplicable(e.target.value)}
               className="checkcoupon"
               type="text"
               placeholder="Coupon Code"
             />
-            <button className="applycoupon">APPLY</button>
+            <button onClick={() => {
+              if(aplicable=="masai30"){
+                const sendprice = totalprice*(1-(30/100))
+                dispatch(discount(Math.floor(sendprice)))
+              }
+              else{
+                alert("not a valid Coupon Code")
+              }
+            }} className="applycoupon">APPLY</button>
             <hr className="hrcheck" />
             <div className="pricedetail">
               <h3>PRICE DETAILS</h3>
               <div className="totalpricecart">
                 <div className="price2item">
-                  <p className="price2color">Price(2 items)</p><h4 className="checkcartprice">3555454</h4>
+                  <p className="price2color">Price(2 items)</p><h4 className="checkcartprice">₹{totalprice}</h4>
                 </div>
                 <div className="deliveryitem">
                   <p className="price2color">Delivery Charges</p>
@@ -78,7 +88,7 @@ const Cart = () => {
                 <div className="amttotalcart">
                   
                     <h4 className="amt">AMOUNT PAYABLE</h4>
-                    <h3 className="amtcart">452555</h3>
+                    <h3 className="amtcart">₹{totalprice}</h3>
                  
                 </div>
               </div>

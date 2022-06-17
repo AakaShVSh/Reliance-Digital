@@ -1,4 +1,5 @@
 import { moto } from "../../data/data"
+import { SORT } from "../sortaction";
 
 const initstate = {
     loading:false,
@@ -8,6 +9,13 @@ const initstate = {
 export const motoreducer =  (state = initstate,{type,payload}) => {
  
     switch(type){
+        case SORT:
+      return {
+        ...state,
+        data: [...state.data].sort((a, b) =>
+          a[payload] > b[payload] ? 1 : a[payload] < b[payload] ? -1 : 0
+        ),
+      };
         default:
             return state
     }

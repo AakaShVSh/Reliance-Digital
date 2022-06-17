@@ -24,7 +24,8 @@
     margin:0% 0% 0% 10%;
     /* line-height: 45%; */
     text-align: right;
-    width:20%
+    padding-right:1%;
+    width:27%
 }
 .contact{
     /* border:1px solid blue; */
@@ -171,4 +172,8 @@ li{
 
 #img8{
     background-image: url("https://www.reliancedigital.in/medias/Accessories-Menu-Banners-04-01-2021-01.jpg?context=bWFzdGVyfGltYWdlc3wxMDEzMjl8aW1hZ2UvanBlZ3xpbWFnZXMvaGJjL2g5OS85NjM4OTI4NDE2Nzk4LmpwZ3wwZjliNTg0MWNlNTI3MWY1M2FiZWQxOWJmYjAwNjgyNzdhYjMxNTk3N2NhNzM4ZDIyMjFhM2M0ODM1M2Y0M2Ux");
+}
+.linknavbar{
+    text-decoration: none;
+    color: white;
 }

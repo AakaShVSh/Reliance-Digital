@@ -1,7 +1,9 @@
-import { ADD_TO_CART } from "./carttype"
+import { ADD_PRICE, ADD_TO_CART, DISCOUNT, INDIVIDUAL, MORE_PRICE, REMOVE } from "./carttype"
 
 const initstate = {
-    cartdata:[]
+    cartdata:[],
+    totalprice:0,
+    directbuy:0
 }
 
 const cartreducer = (state = initstate,{type,payload}) => {
@@ -12,7 +14,31 @@ const cartreducer = (state = initstate,{type,payload}) => {
                 ...state,
                 cartdata:[...state.cartdata,payload]
             }
-        
+        case ADD_PRICE:
+            return{
+                ...state,
+                totalprice:state.totalprice+payload
+            }
+            case REMOVE:
+                return {
+                    ...state,
+                    cartdata:state.cartdata.filter((e) => e.title !== payload)
+                }
+            case INDIVIDUAL:
+                return {
+                    ...state,
+                    directbuy:payload
+                }
+            case MORE_PRICE:
+                return {
+                    ...state,
+                    totalprice:state.totalprice + payload
+                }  
+            case DISCOUNT:
+                return {
+                    ...state,
+                    totalprice:payload
+                }      
         default:
             return state
     }

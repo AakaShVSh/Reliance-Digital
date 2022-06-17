@@ -1,19 +1,21 @@
 .checkoutpage{
-    border:1px solid #e32728;
+    /* border:1px solid #e32728; */
     width:24%;
     margin:auto;
     margin-top:3%;
     padding:2%;
     border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .checkoutpagedetail{
     width:90%;
-    border:1px solid #1f4985;
+    /* border:1px solid #1f4985; */
     text-align: left;
     /* width: fit-content; */
     border-radius: 2ch;
     padding:2%;
     margin: auto;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 .flexcheckb{
     display: flex;
@@ -55,6 +57,25 @@
 }
 .btncheckoutpage{
     width:100%;
+    margin:auto;
     margin-top:20px;
-    border:1px solid orangered
+    /* border:1px solid orangered; */
+    margin-right:2%
+}
+.checkpagepay{
+    width:100%;
+    font-size: x-large;
+    background-color: #e32728;
+    color: white;
+    border:0px;
+    border-radius: 4px;
+}
+.checkpageback{
+    width:100%;
+    font-size: x-large;
+    margin-top:5%;
+    background-color: #1f4985;
+    color: white;
+    border:0px;
+    border-radius: 4px;;
 }

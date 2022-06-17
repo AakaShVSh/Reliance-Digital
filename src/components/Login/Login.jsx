@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import isAuthAction from "../../refactors/isAuth/isAuthAction";
 const Login = () => {
   const [show, setshow] = useState(false);
   const [number,setnumber] = useState("");
   const [take,settake] = useState("")
   const navigate = useNavigate()
+  const {isauth} = useSelector((store) => store.auth)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    if(isauth){
+      navigate("/", { replace: true });
+    }
+
+  },[isauth, navigate])
+  
   return (
     <div className="login">
       <img
@@ -20,7 +31,7 @@ const Login = () => {
           <hr />
           {show === false ? (
             <div className="inputlogin">
-              <input onChange={(e) => setnumber(e.target.value)} className="logininput" type="number" />
+              <input onChange={(e) => setnumber(e.target.value)} placeholder="Enter number" className="logininput" type="number" />
               <button disabled={number===10} onClick={() => {
                 if(number.length===10){
                   setshow(!show)
@@ -40,9 +51,10 @@ const Login = () => {
                 <input onChange={(e) => settake(e.target.value)} type="number" placeholder="Enter OTP*" className="inputputlogin" name="" id="" />
                 <p className="resend">Resend OTP</p>
                 <button onClick={() => {
-                      if(take==="878909"){
+                      if(take=="878909"){
                         navigate("/",{replace:true})
                       }
+                      dispatch(isAuthAction(!isauth))
                 }} className="submitlogin">LOGIN</button>
                 <button onClick={() => setshow(!show)} className="backlogin">
                   BACK

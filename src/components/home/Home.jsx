@@ -1,9 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 import { homedata } from "../../data/data";
+import { addprice, addtocart } from "../../refactors/cart/cartAction";
 import "./Home.css";
 const Home = () => {
   const { Offer, explore, product } = homedata;
-  console.log(homedata);
+  // console.log(homedata);
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
   return (
     <div>
       <img
@@ -43,64 +48,139 @@ const Home = () => {
       </div>
       <div className="bestmobile-main">
         <h2>BEST SELLING MOBILES</h2>
-      <div className="bestmobile">
-        <img className="boximg" src="https://www.reliancedigital.in/medias/Best-Selling-Mobiles.jpg?context=bWFzdGVyfGltYWdlc3wxMDMyODF8aW1hZ2UvanBlZ3xpbWFnZXMvaDRmL2hhMS85ODQyMjU1MTY3NTE4LmpwZ3w1YzI5NmI5ZDkzYTI0NTBlZDA5YzExZmMyNWIwYjExMzQ5YmY2Y2RhMDE0YjVlNDkzMjhjYjBmOWYzNGM0MjVm" alt="img" />
-       
-        {product.bestphone.map((e) => <div key={e.id} className="bestmobilebox">
-          <img id="struc" className="bestmobileimg" src={e.img} alt="" />
-          <p className="onhovertitle">{e.title}</p>
-          <h5 className="bestphonedis">Offer Price:<>₹{e.price}.00</></h5>
-          <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
-         <div className='btn'> <button className="bestphonebutton">Buy Now</button>
-           <button className="bestphonebutton">Add to Cart</button> 
-      </div>  </div>)}
-      
-      </div>
+        <div className="bestmobile">
+          <img
+            className="boximg"
+            src="https://www.reliancedigital.in/medias/Best-Selling-Mobiles.jpg?context=bWFzdGVyfGltYWdlc3wxMDMyODF8aW1hZ2UvanBlZ3xpbWFnZXMvaDRmL2hhMS85ODQyMjU1MTY3NTE4LmpwZ3w1YzI5NmI5ZDkzYTI0NTBlZDA5YzExZmMyNWIwYjExMzQ5YmY2Y2RhMDE0YjVlNDkzMjhjYjBmOWYzNGM0MjVm"
+            alt="img"
+          />
+
+          {product.bestphone.map((e) => (
+            <div key={e.id} className="bestmobilebox">
+              <img id="struc" className="bestmobileimg" src={e.img} alt="" />
+              <p className="onhovertitle">{e.title}</p>
+              <h5 className="bestphonedis">
+                Offer Price:<>₹{e.price}.00</>
+              </h5>
+              <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
+              <div className="btn">
+                {" "}
+                <button onClick={() => dispatch(addprice(e.price))} className="bestphonebutton">Buy Now</button>
+                <button
+                  onClick={() => {
+                    dispatch(addtocart(e));
+                    dispatch(addprice(e.price));
+                  }}
+                  className="bestphonebutton"
+                >
+                  Add to Cart
+                </button>
+              </div>{" "}
+            </div>
+          ))}
+        </div>
       </div>
       <hr />
       <div className="bestmobile-main">
         <h2>LAPTOPS WITH SSD</h2>
-      <div className="bestmobile">
-      {product.bestlaptop.map((e) => <div key={e.id} className="bestmobilebox">
-          <img id="struc" className="bestmobileimg" src={e.img} alt="" />
-          <p className="onhovertitle">{e.title}</p>
-          <h5 className="bestphonedis">Offer Price:<>₹{e.price}.00</></h5>
-          <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
-         <div className='btn'> <button className="bestphonebutton">Buy Now</button>
-           <button className="bestphonebutton">Add to Cart</button> 
-      </div>  </div>)}
-        <img className="boximg" src="https://www.reliancedigital.in/medias/Laptops-with-SSD.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ5ODN8aW1hZ2UvanBlZ3xpbWFnZXMvaDVjL2hhZS85ODM3MjgzMTgwNTc0LmpwZ3w1NzM1ZmZiZmU4OTlmZTE3MjVmYjdkNTY3NDhmNzI5MDA5Yzk5YjQzOWQwODdlYjJjNTRiYzAxNTJkYTFhNzE0" alt="img" />
-      </div>
+        <div className="bestmobile">
+          {product.bestlaptop.map((e) => (
+            <div key={e.id} className="bestmobilebox">
+              <img id="struc" className="bestmobileimg" src={e.img} alt="" />
+              <p className="onhovertitle">{e.title}</p>
+              <h5 className="bestphonedis">
+                Offer Price:<>₹{e.price}.00</>
+              </h5>
+              <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
+              <div className="btn">
+                {" "}
+                <button onClick={() => {dispatch(addprice(e.price)); navigate("/checkout",{replace:true})}} className="bestphonebutton">Buy Now</button>
+                <button
+                  onClick={() => {
+                    dispatch(addtocart(e));
+                    dispatch(addprice(e.price));
+                  }}
+                  className="bestphonebutton"
+                >
+                  Add to Cart
+                </button>
+              </div>{" "}
+            </div>
+          ))}
+          <img
+            className="boximg"
+            src="https://www.reliancedigital.in/medias/Laptops-with-SSD.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ5ODN8aW1hZ2UvanBlZ3xpbWFnZXMvaDVjL2hhZS85ODM3MjgzMTgwNTc0LmpwZ3w1NzM1ZmZiZmU4OTlmZTE3MjVmYjdkNTY3NDhmNzI5MDA5Yzk5YjQzOWQwODdlYjJjNTRiYzAxNTJkYTFhNzE0"
+            alt="img"
+          />
+        </div>
       </div>
       <hr />
       <div className="bestmobile-main">
         <h2>TOP DEALS IN WASHING MACHINE</h2>
-      <div className="bestmobile">
-        <img className="boximg" src="https://www.reliancedigital.in/medias/Top-Deals-In-Washing-Machine.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ0MTN8aW1hZ2UvanBlZ3xpbWFnZXMvaDdiL2g0NS85ODM3MjgzMjQ2MTEwLmpwZ3xiYWYzNTI4ZDRkYTZlNmUzMDhjYzA0OTQ3MmYyNWM2MWEzNGMzNGZkM2E2NDk2MTI3MjAyOTkwYjVjZTZlYzcz" alt="img" />
-        {product.bestwashing.map((e) => <div key={e.id} className="bestmobilebox">
-          <img id="struc" className="bestmobileimg" src={e.img} alt="" />
-          <p className="onhovertitle">{e.title}</p>
-          <h5 className="bestphonedis">Offer Price:<>₹{e.price}.00</></h5>
-          <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
-         <div className='btn'> <button className="bestphonebutton">Buy Now</button>
-           <button className="bestphonebutton">Add to Cart</button> 
-      </div>  </div>)}
-      </div>
+        <div className="bestmobile">
+          <img
+            className="boximg"
+            src="https://www.reliancedigital.in/medias/Top-Deals-In-Washing-Machine.jpg?context=bWFzdGVyfGltYWdlc3wxMDQ0MTN8aW1hZ2UvanBlZ3xpbWFnZXMvaDdiL2g0NS85ODM3MjgzMjQ2MTEwLmpwZ3xiYWYzNTI4ZDRkYTZlNmUzMDhjYzA0OTQ3MmYyNWM2MWEzNGMzNGZkM2E2NDk2MTI3MjAyOTkwYjVjZTZlYzcz"
+            alt="img"
+          />
+          {product.bestwashing.map((e) => (
+            <div key={e.id} className="bestmobilebox">
+              <img id="struc" className="bestmobileimg" src={e.img} alt="" />
+              <p className="onhovertitle">{e.title}</p>
+              <h5 className="bestphonedis">
+                Offer Price:<>₹{e.price}.00</>
+              </h5>
+              <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
+              <div className="btn">
+                {" "}
+                <button onClick={() => {dispatch(addprice(e.price)); navigate("/checkout",{replace:true})}} className="bestphonebutton">Buy Now</button>
+                <button
+                  onClick={() => {
+                    dispatch(addtocart(e));
+                    dispatch(addprice(e.price));
+                  }}
+                  className="bestphonebutton"
+                >
+                  Add to Cart
+                </button>
+              </div>{" "}
+            </div>
+          ))}
+        </div>
       </div>
       <hr />
       <div className="bestmobile-main">
         <h2>XIAOMI HD SMART LED TV</h2>
-      <div className="bestmobile">
-      {product.besttv.map((e) => <div key={e.id} className="bestmobilebox">
-          <img id="struc" className="bestmobileimg" src={e.img} alt="" />
-          <p className="onhovertitle">{e.title}</p>
-          <h5 className="bestphonedis">Offer Price:<>₹{e.price}.00</></h5>
-          <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
-         <div className='btn'> <button className="bestphonebutton">Buy Now</button>
-           <button className="bestphonebutton">Add to Cart</button> 
-      </div>  </div>)}
-        <img className="boximg" src="https://www.reliancedigital.in/medias/Xiaomi-HD-Smart-LED-TV-Products-Carousel.jpg?context=bWFzdGVyfGltYWdlc3wxMjU2ODV8aW1hZ2UvanBlZ3xpbWFnZXMvaGQxL2g0Ny85ODM5ODA1MzMzNTM0LmpwZ3w4NTAxN2Q3ZDNlMTZiMGYwMTZlMjg5YWIwMmQxODkwMzkzMDE4OTIzOTFlYTA2NmZjZTQ4NGMxNWUzNTU0ZGM3" alt="img" />
-      </div>
+        <div className="bestmobile">
+          {product.besttv.map((e) => (
+            <div key={e.id} className="bestmobilebox">
+              <img id="struc" className="bestmobileimg" src={e.img} alt="" />
+              <p className="onhovertitle">{e.title}</p>
+              <h5 className="bestphonedis">
+                Offer Price:<>₹{e.price}.00</>
+              </h5>
+              <p className="bestphonediscount">M.R.P: ₹{e.Dprice}.00</p>
+              <div className="btn">
+                {" "}
+                <button onClick={() => dispatch(addprice(e.price))} className="bestphonebutton">Buy Now</button>
+                <button
+                  onClick={() => {
+                    dispatch(addtocart(e));
+                    dispatch(addprice(e.price));
+                  }}
+                  className="bestphonebutton"
+                >
+                  Add to Cart
+                </button>
+              </div>{" "}
+            </div>
+          ))}
+          <img
+            className="boximg"
+            src="https://www.reliancedigital.in/medias/Xiaomi-HD-Smart-LED-TV-Products-Carousel.jpg?context=bWFzdGVyfGltYWdlc3wxMjU2ODV8aW1hZ2UvanBlZ3xpbWFnZXMvaGQxL2g0Ny85ODM5ODA1MzMzNTM0LmpwZ3w4NTAxN2Q3ZDNlMTZiMGYwMTZlMjg5YWIwMmQxODkwMzkzMDE4OTIzOTFlYTA2NmZjZTQ4NGMxNWUzNTU0ZGM3"
+            alt="img"
+          />
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router'
 import Cart from '../cart/Cart'
 import Checkout from '../Checkout/Checkout'
@@ -9,9 +9,11 @@ import Roboticvacuum from '../homeappliance/Roboticvacuum'
 import Login from '../Login/Login'
 import Moto from '../Mobile&tablets/Motog/Moto'
 import Navbar from '../Navbar/Navbar'
+import Require from '../RequiredAuth/Require'
 import Inchtv from '../Tv&audio/32Inchtv'
 
 const Allcomponents = () => {
+  const [isAuth,setisAuth] = useState(false);
   return (
     <div>
       <Navbar/>
@@ -22,7 +24,7 @@ const Allcomponents = () => {
         <Route path='/inchtv' element={<Inchtv/>}></Route>
         <Route path='/robotic' element={<Roboticvacuum/>}></Route> 
         <Route path='/cart' element={<Cart/>}></Route>
-        <Route path='/checkout' element={<Checkout/>}></Route>
+        <Route path='/checkout' element={<Require><Checkout/></Require>}></Route>
         <Route path='/contact' element={<Contactus/>}></Route>
       </Routes>
       <Footer/>
