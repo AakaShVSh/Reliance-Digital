@@ -1,0 +1,92 @@
+.login{
+    width:90%;
+    margin: auto;
+    /* border: 1px solid red; */
+    display: flex;
+    margin-top:3%
+}
+.loginimg{
+    width:70%
+}
+.logintext{
+    width:30%;
+    /* border:1px solid gray; */
+    height: fit-content;
+    border-radius: 5px;
+    padding: 1%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.loginbtndetail{
+    /* border:1px solid red; */
+    margin: 2%;
+    text-align: left;
+}
+.inputlogin{
+    /* border:1px solid red; */
+    padding:4%;
+    text-align:center
+}
+.logininput{
+    width:98%;
+    margin-top:-7%;
+    font-size: larger;
+    padding:1%
+}
+.loginbtn{
+    width:100%;
+    text-align: center;
+    margin-top:4%;
+    font-size: large;
+    color: white;
+    background-color: #e32728;
+    padding: 2%;
+    border:0;
+    border-radius: 4px;
+}
+
+
+/* otp */
+.otplogin{
+    /* border:1px solid blue */
+}
+.loginbtnup{
+margin-top:-2%;
+/* border:1px solid red; */
+color: #1f4985;
+}
+.putotp{
+    margin-top:-1%;
+    /* font-size: large; */
+    width:100%
+
+}
+.inputputlogin{
+    font-size: large;
+    width:95%;
+    padding:2%;
+}
+.resend{
+    margin-top: 0%;
+    color: #1f4985;
+}
+.submitlogin{
+    font-size: x-large;
+    padding:1%;
+    width:100%;
+    color: white;
+    background-color: #e32728;
+    border:0;
+    border-radius: 4px;
+    margin-bottom: 3%;
+}
+.backlogin{
+    font-size: x-large;
+    padding:1%;
+    width:100%;
+    color:#e32728;
+    background-color: #ffffff;
+    border:0;
+    border: 1px solid#e32728;
+    border-radius: 4px;
+    margin-bottom: 3%;
+}
