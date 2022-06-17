@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router'
 import Cart from '../cart/Cart'
 import Checkout from '../Checkout/Checkout'
 import Contactus from '../contactus/contactus'
+import Footer from '../footer/Footer'
 import Home from '../home/Home'
 import Roboticvacuum from '../homeappliance/Roboticvacuum'
 import Login from '../Login/Login'
@@ -24,7 +25,7 @@ const Allcomponents = () => {
         <Route path='/checkout' element={<Checkout/>}></Route>
         <Route path='/contact' element={<Contactus/>}></Route>
       </Routes>
-
+      <Footer/>
     </div>
   )
 }

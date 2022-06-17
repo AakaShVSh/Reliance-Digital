@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import "./cart.css";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const { cartdata } = useSelector((state) => state.cart);
+  
   console.log(cartdata);
   return (
     <div className="cartdiv">
@@ -52,7 +54,7 @@ const Cart = () => {
         ))}
       </div>
       <div className="checkitem">
-        <button className="checkbtn1">CHECKOUT</button>
+        <button className="checkbtn1"><Link className="cartlink" to="/checkout">CHECKOUT</Link></button>
         <div className="cartcheck">
           <div className="cartcheckcoupon">
             <input

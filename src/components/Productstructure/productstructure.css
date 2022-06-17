@@ -11,7 +11,8 @@
 .mobile{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap:2%
+    gap:2%;
+    margin-bottom: 15%;
 }
 .mobileimg{
     width:70%;

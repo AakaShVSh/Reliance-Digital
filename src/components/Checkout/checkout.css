@@ -1,0 +1,60 @@
+.checkoutpage{
+    border:1px solid #e32728;
+    width:24%;
+    margin:auto;
+    margin-top:3%;
+    padding:2%;
+    border-radius: 4px;
+}
+.checkoutpagedetail{
+    width:90%;
+    border:1px solid #1f4985;
+    text-align: left;
+    /* width: fit-content; */
+    border-radius: 2ch;
+    padding:2%;
+    margin: auto;
+}
+.flexcheckb{
+    display: flex;
+    justify-content: space-between;
+    color: #1f4985;
+}
+.chemethod{
+    width: 70%;
+    height:25px;
+    margin-top:19px
+}
+.headcheck{
+    margin-top:-3%;
+    color: #e32728;
+}
+.paymentmethod{
+    color: #1f4985;
+}
+.otpveri{
+    color: #1f4985;
+}
+.checkprocced{
+    width:100%;
+    margin-bottom:2%;
+    font-size: x-large;
+    color: white;
+    background-color:#e32728 ;
+    border:0px;
+    border-radius: 3px;
+}
+.otpvari{
+    color:#1f4985
+}
+.otpcheckoutpage{
+    width:98%;
+    margin-top:-7%;
+    margin-right:3%;
+    font-size: large;
+}
+.btncheckoutpage{
+    width:100%;
+    margin-top:20px;
+    border:1px solid orangered
+}
