@@ -26,10 +26,14 @@
 .explorebtn{
     font-size: x-large;
     border-radius: 38%;
-    border-color: blue;
-    background-color: rgb(42, 42, 252);
-    color: white;
-    margin:2%
+    border-color: rgb(66, 66, 66);
+    border:1ch;
+    background-color: rgb(220, 220, 226);
+    color: rgb(14, 13, 13);
+    margin:2%;
+    width:9%;
+    /* height:0%; */
+    /* padding: 1%; */
 }
 .explorebtn:hover{
     background-color: white;
@@ -83,6 +87,8 @@
 .bestphonebutton{
     background-color: rgb(36, 116, 26);
     color: white;
+    margin-top:1%;
+    border-radius: 4px;
     font-size: large;
 }
 .bestphonebutton:hover{

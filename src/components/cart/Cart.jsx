@@ -8,6 +8,7 @@ const Cart = () => {
   const { cartdata ,totalprice} = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [aplicable,setaplicable] = useState("")
+  const [countcon,setcountcon] = useState(0)
   console.log(cartdata);
   return (
     <div className="cartdiv">
@@ -65,9 +66,11 @@ const Cart = () => {
               placeholder="Coupon Code"
             />
             <button onClick={() => {
-              if(aplicable=="masai30"){
+              
+              if(aplicable=="masai30"&&countcon===0){
                 const sendprice = totalprice*(1-(30/100))
                 dispatch(discount(Math.floor(sendprice)))
+                setcountcon(1)
               }
               else{
                 alert("not a valid Coupon Code")
@@ -78,7 +81,7 @@ const Cart = () => {
               <h3>PRICE DETAILS</h3>
               <div className="totalpricecart">
                 <div className="price2item">
-                  <p className="price2color">Price(2 items)</p><h4 className="checkcartprice">₹{totalprice}</h4>
+                  <p className="price2color">Price({cartdata.length} items)</p><h4 className="checkcartprice">₹{totalprice}</h4>
                 </div>
                 <div className="deliveryitem">
                   <p className="price2color">Delivery Charges</p>

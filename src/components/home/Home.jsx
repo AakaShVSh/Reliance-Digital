@@ -44,7 +44,7 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <button className="explorebtn">View All</button>
+        <button className="explorebtn"><h5>View All</h5></button>
       </div>
       <div className="bestmobile-main">
         <h2>BEST SELLING MOBILES</h2>
